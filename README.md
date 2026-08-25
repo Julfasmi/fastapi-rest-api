@@ -1,32 +1,52 @@
 # ⚡ FastAPI CRUD REST API
 
-A simple RESTful API built with **Python and FastAPI** that demonstrates how to create and manage data through HTTP endpoints using CRUD operations.
+> A Python-based CRUD REST API built with FastAPI and Pydantic, with a Streamlit client for interacting with and testing HTTP endpoints.
 
-This project was built to explore the fundamentals of API development, request handling, data validation, and RESTful API design using FastAPI.
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white)
+![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat&logo=fastapi&logoColor=white)
+![Pydantic](https://img.shields.io/badge/Pydantic-E92063?style=flat)
+![REST API](https://img.shields.io/badge/REST%20API-4E79A7?style=flat)
+![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=flat&logo=streamlit&logoColor=white)
 
 ---
 
 ## 📌 Overview
 
-APIs provide a way for different applications and services to communicate with each other through structured requests and responses.
+This project demonstrates how to build and interact with a **RESTful API using FastAPI**.
 
-This project implements a simple REST API using **FastAPI**, with endpoints for creating, retrieving, updating, and deleting data.
+The API provides CRUD operations for managing item data, while a simple **Streamlit client** is included to interact with selected API endpoints through a graphical interface.
 
-The application demonstrates the basic workflow of a CRUD API:
+The project focuses on understanding the fundamentals of:
+
+- REST API development
+- HTTP methods
+- Request and response handling
+- Data validation with Pydantic
+- CRUD operations
+- API-client communication
+- FastAPI automatic documentation
+
+The overall architecture is:
 
 ```text
-Client
-  │
-  ▼
-HTTP Request
-  │
-  ▼
-FastAPI
-  │
-  ├── Create
-  ├── Read
-  ├── Update
-  └── Delete
-  │
-  ▼
-HTTP Response
+┌──────────────────┐
+│  Streamlit Client│
+│                  │
+│  Create / Get    │
+└────────┬─────────┘
+         │
+         │ HTTP Request
+         ▼
+┌──────────────────┐
+│     FastAPI      │
+│                  │
+│ GET / POST       │
+│ PUT / PATCH      │
+│ DELETE           │
+└────────┬─────────┘
+         │
+         ▼
+┌──────────────────┐
+│    In-Memory DB  │
+│    fake_db       │
+└──────────────────┘
